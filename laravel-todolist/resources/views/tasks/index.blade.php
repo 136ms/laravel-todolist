@@ -5,7 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <a href="{{route('tasks.create')}}">
-                    <button class="btn btn-success">Add task</button>
+                    <button class="btn btn-sm btn-success mb-3 m-1">Add task</button>
+                </a>
+                <a href="{{route('tasks.destroy.all')}}">
+                    <button class="btn btn-sm btn-danger mb-3 m-1">Remove all</button>
                 </a>
                 <div class="card">
                     <div class="card-header">{{ __('Task Dashboard') }}</div>
@@ -22,6 +25,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Priority</th>
+                                <th scope="col">Completed</th>
                                 <th scope="col">Created</th>
                                 <th scope="col">Updated</th>
                                 <th scope="col">Functions</th>
@@ -33,6 +37,7 @@
                                     <td>{{ $task->name }}</td>
                                     <td>{{ $task->description }}</td>
                                     <td>{{ $task->priority }}</td>
+                                    <td>{{ $task->is_completed }}</td>
                                     <td>{{ $task->created_at }}</td>
                                     <td>{{ $task->updated_at }}</td>
                                     <td>
