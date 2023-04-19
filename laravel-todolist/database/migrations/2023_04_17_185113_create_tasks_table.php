@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('description');
             $table->string('priority');
-            $table->boolean('is_completed')->default(false);
+            $table->string('is_completed')->default("false");
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
