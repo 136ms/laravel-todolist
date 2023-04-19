@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -30,6 +34,7 @@ class TaskController extends Controller
         $task->name = $request->Name;
         $task->description = $request->Description;
         $task->priority = $request->Priority;
+        $task->is_completed = $request->Completed;
         $task->save();
         return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
     }
@@ -66,4 +71,13 @@ class TaskController extends Controller
 
         return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
     }
+
+    public function destroyAll()
+    {
+        Task::getQuery()->delete();
+
+        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
+    }
 }
+
+
