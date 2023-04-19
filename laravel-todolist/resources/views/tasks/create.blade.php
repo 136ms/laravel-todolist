@@ -30,8 +30,16 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea3">Description</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" placeholder="task description" name="Description" required></textarea>
+                                    <label for="exampleFormControlSelect3">Completed</label>
+                                    <select class="form-control" id="exampleFormControlSelect3" name="Completed" required>
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea4">Description</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" placeholder="task description" name="Description" required></textarea>
                                 </div>
                             </div>
 
